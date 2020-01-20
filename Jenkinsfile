@@ -1,6 +1,5 @@
 node {
-    
-    stages {
+ 
      stage 'checkout'
      git url: 'https://github.com/Mohini-Dangale/jenkins_pipeline.git'
      
@@ -11,5 +10,4 @@ node {
    sh "${mvnHome}/bin/mvn clean sonar:sonar"
    step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
    
-   }
    }
